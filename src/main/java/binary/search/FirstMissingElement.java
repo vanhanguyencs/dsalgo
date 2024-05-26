@@ -15,10 +15,10 @@ public class FirstMissingElement {
         while (lo < hi) {
             int mid = lo + (hi - lo + 1) / 2;
             System.out.println("lo=" + lo + " hi= " + hi + " mid= " + mid);
-            if (nums[0] + mid * diff < nums[mid]) {
-                hi = mid - 1;
-            } else {
+            if (nums[0] + mid * diff == nums[mid]) {
                 lo = mid;
+            } else {
+                hi = mid - 1;
             }
         }
         return nums[lo] + diff;
