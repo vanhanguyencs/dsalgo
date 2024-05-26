@@ -1,4 +1,4 @@
-package org.example;
+package binary.search;
 
 public class Main {
     public static void main(String[] args) {
