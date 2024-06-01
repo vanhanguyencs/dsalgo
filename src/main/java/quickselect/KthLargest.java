@@ -1,6 +1,9 @@
 package quickselect;
 
+import java.util.Random;
+
 public class KthLargest {
+    static Random rand = new Random();
     public static void main(String[] args) {
         int[] nums = {3, 2, 1, 5, 6, 4};
         int res = findKthLargest(nums, 2);
@@ -34,6 +37,8 @@ public class KthLargest {
     }
 
     public static int partition(int[] nums, int lo, int hi) {
+        int pivotIdx = rand.nextInt((hi - lo) + 1) + lo;
+        swap(nums, pivotIdx, lo);
         int pivot = nums[lo];
         int i = lo, j = hi;
         while (i <= j) {
